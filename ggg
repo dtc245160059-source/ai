@@ -1,0 +1,52 @@
+package com.codegym;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+@WebServlet(name = "LoginServlet", urlPatterns = {"/login"})
+public class LoginServlet extends HttpServlet {
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+            throws ServletException, IOException {
+        
+        // Hỗ trợ hiển thị tiếng Việt và định dạng HTML
+        response.setContentType("text/html;charset=UTF-8");
+        
+        // 1. Lấy dữ liệu gửi từ Form qua tham số 'name' của thẻ input
+        String user = request.getParameter("username");
+        String pass = request.getParameter("password");
+        
+        try (PrintWriter out = response.getWriter()) {
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Login Result</title>");
+            out.println("<style>");
+            out.println("body { font-family: Arial, sans-serif; text-align: center; margin-top: 100px; background-color: #f8fafc; }");
+            out.println(".card { background: white; width: 380px; margin: 0 auto; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }");
+            out.println("a { display: inline-block; margin-top: 15px; color: #1b2a7a; text-decoration: none; font-weight: bold; }");
+            out.println("</style>");
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<div class='card'>");
+            
+            // 2. Kiểm tra điều kiện tài khoản & mật khẩu
+            if ("admin".equals(user) && "admin".equals(pass)) {
+                out.println("<h1 style='color: #16a34a;'>Welcome admin to website</h1>");
+            } else {
+                out.println("<h1 style='color: #dc2626;'>Login Error</h1>");
+            }
+            
+            out.println("<a href='index.jsp'>← Go back</a>");
+            out.println("</div>");
+            out.println("</body>");
+            out.println("</html>");
+        }
+    }
+}
