@@ -3,112 +3,264 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MetricsHub Dashboard - Refactored</title>
+    <title>Microsoft Surface - Official Store</title>
 
-    <!-- Bootstrap 5 CDN (Dùng cho Pricing & Card Utilities) -->
+    <!-- Bootstrap 5 CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- File CSS tùy chỉnh -->
+    <!-- Bootstrap Icons CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- 1. NAVBAR: Áp dụng Flexbox (Content-first, co giãn động theo chữ dài) -->
-    <nav class="custom-navbar">
-        <div class="nav-logo">
-            <strong>MetricsHub</strong>
-        </div>
-        <div class="nav-links">
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">VeryLongGermanWordForDashboard</a>
-            <a href="#">Contact</a>
-        </div>
-        <div class="nav-profile">
-            <button class="btn btn-outline-light btn-sm">Profile</button>
+    <!-- 1. NAVBAR (Thanh điều hướng kiểu Microsoft) -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top">
+        <div class="container">
+            <!-- Logo Microsoft & Surface -->
+            <a class="navbar-brand d-flex align-items-center me-4" href="#">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" alt="Microsoft" height="22">
+                <span class="mx-2 text-muted">|</span>
+                <span class="fw-bold text-dark fs-5">Surface</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active fw-semibold" href="#">Computers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Computers for Business</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Accessories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Deals</a></li>
+                </ul>
+
+                <!-- Nút thao tác bên phải -->
+                <div class="d-flex align-items-center gap-3">
+                    <a href="#" class="text-dark text-decoration-none small d-none d-xl-inline">All Microsoft</a>
+                    <button class="btn btn-link text-dark p-0"><i class="bi bi-search fs-5"></i></button>
+                    <button class="btn btn-link text-dark p-0 me-2"><i class="bi bi-cart3 fs-5"></i></button>
+                    <a href="#" class="btn btn-outline-dark btn-sm rounded-0 px-3">Sign in</a>
+                </div>
+            </div>
         </div>
     </nav>
 
-    <!-- 2. BENTO DASHBOARD: Áp dụng CSS Grid 2D (Làm phẳng DOM, dùng span) -->
-    <section class="dashboard-container my-4">
-        <h2 class="mb-3 px-3">Bento Dashboard Metrics</h2>
-        
-        <div class="bento-grid">
-            <!-- Chart A: Chiếm 2 cột x 2 hàng -->
-            <div class="widget widget-large-2x2">
-                <h3>Chart A (Span 2x2)</h3>
-                <p>Biểu đồ phân tích doanh thu tổng hợp (Chiếm 2 cột, 2 hàng trên Desktop).</p>
-            </div>
-            
-            <!-- Các Widget đơn nhỏ (Siblings ngang hàng) -->
-            <div class="widget">
-                <h4>Chart B</h4>
-                <p>Lượng truy cập theo giờ</p>
-            </div>
-
-            <div class="widget">
-                <h4>Chart C</h4>
-                <p>Tỷ lệ chuyển đổi</p>
-            </div>
-
-            <div class="widget">
-                <h4>Chart D</h4>
-                <p>Số lượng người dùng mới</p>
-            </div>
-
-            <div class="widget">
-                <h4>Chart E</h4>
-                <p>Thời gian trung bình/phiên</p>
+    <!-- 2. HERO SECTION (Banner chính giới thiệu Surface Pro) -->
+    <section class="container my-4">
+        <div class="p-4 p-md-5 bg-light rounded-3 border shadow-sm">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-6">
+                    <span class="badge bg-primary mb-2 px-3 py-2 text-uppercase">New Release</span>
+                    <h1 class="display-4 fw-bold text-dark">Surface Pro 9</h1>
+                    <p class="fs-5 text-muted my-3">
+                        The tablet flexibility you want and the laptop performance you need—all in one ultra-portable, versatile device.
+                    </p>
+                    <div class="d-flex flex-wrap gap-2 mt-4">
+                        <a href="#" class="btn btn-primary btn-lg rounded-1 px-4">Shop Surface Pro 9</a>
+                        <a href="#" class="btn btn-outline-secondary btn-lg rounded-1 px-4">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="https://picsum.photos/800/500?random=1" class="img-fluid rounded-3 shadow" alt="Surface Pro 9">
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- 3. PRICING SECTION: Áp dụng Bootstrap 5 Grid (Tốc độ triển khai nhanh, chuẩn RWD) -->
+    <!-- 3. QUICK NAV / CATEGORIES (Danh mục xem nhanh) -->
     <section class="container my-5">
-        <h2 class="text-center mb-4">Bảng Giá Dịch Vụ</h2>
-        
-        <div class="row g-4">
-            <!-- Gói Cơ bản -->
-            <div class="col-12 col-md-4">
-                <div class="card h-100 shadow-sm text-center">
-                    <div class="card-body">
-                        <h3 class="card-title">Gói Cơ bản</h3>
-                        <p class="display-6 fw-bold my-3">$9<small class="fs-6 text-muted">/tháng</small></p>
-                        <p class="card-text">Dành cho cá nhân khởi nghiệp và dự án nhỏ.</p>
-                        <button class="btn btn-outline-primary w-100 mt-3">Đăng ký ngay</button>
-                    </div>
+        <div class="row row-cols-2 row-cols-md-4 g-3 text-center">
+            <div class="col">
+                <div class="p-3 border rounded-3 bg-white shadow-sm h-100 d-flex flex-column justify-content-center">
+                    <i class="bi bi-laptop fs-2 text-primary mb-2"></i>
+                    <h6 class="fw-bold mb-1">Surface Laptops</h6>
+                    <a href="#" class="small text-decoration-none fw-semibold">Explore all &gt;</a>
                 </div>
             </div>
-
-            <!-- Gói Nâng cao -->
-            <div class="col-12 col-md-4">
-                <div class="card h-100 shadow-sm border-primary text-center">
-                    <div class="card-body">
-                        <span class="badge bg-primary mb-2">Phổ biến</span>
-                        <h3 class="card-title">Gói Nâng cao</h3>
-                        <p class="display-6 fw-bold my-3">$29<small class="fs-6 text-muted">/tháng</small></p>
-                        <p class="card-text">Đầy đủ tính năng phân tích cho nhóm phát triển.</p>
-                        <button class="btn btn-primary w-100 mt-3">Đăng ký ngay</button>
-                    </div>
+            <div class="col">
+                <div class="p-3 border rounded-3 bg-white shadow-sm h-100 d-flex flex-column justify-content-center">
+                    <i class="bi bi-tablet-landscape fs-2 text-primary mb-2"></i>
+                    <h6 class="fw-bold mb-1">2-in-1 PCs</h6>
+                    <a href="#" class="small text-decoration-none fw-semibold">Explore all &gt;</a>
                 </div>
             </div>
-
-            <!-- Gói Doanh nghiệp -->
-            <div class="col-12 col-md-4">
-                <div class="card h-100 shadow-sm text-center">
-                    <div class="card-body">
-                        <h3 class="card-title">Gói Doanh nghiệp</h3>
-                        <p class="display-6 fw-bold my-3">$99<small class="fs-6 text-muted">/tháng</small></p>
-                        <p class="card-text">Hỗ trợ riêng 24/7 và tùy chỉnh không giới hạn.</p>
-                        <button class="btn btn-outline-primary w-100 mt-3">Liên hệ kinh doanh</button>
-                    </div>
+            <div class="col">
+                <div class="p-3 border rounded-3 bg-white shadow-sm h-100 d-flex flex-column justify-content-center">
+                    <i class="bi bi-building fs-2 text-primary mb-2"></i>
+                    <h6 class="fw-bold mb-1">Surface for Business</h6>
+                    <a href="#" class="small text-decoration-none fw-semibold">Shop business &gt;</a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3 border rounded-3 bg-white shadow-sm h-100 d-flex flex-column justify-content-center">
+                    <i class="bi bi-headset fs-2 text-primary mb-2"></i>
+                    <h6 class="fw-bold mb-1">Accessories</h6>
+                    <a href="#" class="small text-decoration-none fw-semibold">Shop accessories &gt;</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="text-center py-4 bg-light border-top">
-        <small class="text-muted">&copy; 2026 MetricsHub Inc. All rights reserved.</small>
+    <!-- 4. FEATURED PRODUCTS GRID (Danh sách sản phẩm nổi bật) -->
+    <section class="container my-5">
+        <h2 class="fw-bold mb-4">Explore Surface devices</h2>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+            
+            <!-- Card 1 -->
+            <div class="col">
+                <div class="card h-100 border shadow-sm">
+                    <img src="https://picsum.photos/400/250?random=2" class="card-img-top" alt="Surface Laptop 5">
+                    <div class="card-body d-flex flex-column">
+                        <span class="badge bg-secondary mb-2 align-self-start">Best Seller</span>
+                        <h5 class="card-title fw-bold">Surface Laptop 5</h5>
+                        <p class="card-text text-muted flex-grow-1">Sleek and super-light laptop with exceptional speed and style.</p>
+                        <p class="fw-bold fs-5 text-dark mb-3">From $999.99</p>
+                        <a href="#" class="btn btn-primary w-100 rounded-1">Shop Surface Laptop 5</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col">
+                <div class="card h-100 border shadow-sm">
+                    <img src="https://picsum.photos/400/250?random=3" class="card-img-top" alt="Surface Laptop Studio">
+                    <div class="card-body d-flex flex-column">
+                        <span class="badge bg-info text-dark mb-2 align-self-start">Powerful</span>
+                        <h5 class="card-title fw-bold">Surface Laptop Studio</h5>
+                        <p class="card-text text-muted flex-grow-1">Incredibly powerful, infinitely flexible design for creators.</p>
+                        <p class="fw-bold fs-5 text-dark mb-3">From $1,599.99</p>
+                        <a href="#" class="btn btn-primary w-100 rounded-1">Shop Laptop Studio</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col">
+                <div class="card h-100 border shadow-sm">
+                    <img src="https://picsum.photos/400/250?random=4" class="card-img-top" alt="Surface Laptop Go 2">
+                    <div class="card-body d-flex flex-column">
+                        <span class="badge bg-success mb-2 align-self-start">Budget Choice</span>
+                        <h5 class="card-title fw-bold">Surface Laptop Go 2</h5>
+                        <p class="card-text text-muted flex-grow-1">Sleek, portable, and touchscreen convenience for everyday tasks.</p>
+                        <p class="fw-bold fs-5 text-dark mb-3">From $599.99</p>
+                        <a href="#" class="btn btn-primary w-100 rounded-1">Shop Laptop Go 2</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="col">
+                <div class="card h-100 border shadow-sm">
+                    <img src="https://picsum.photos/400/250?random=5" class="card-img-top" alt="Surface Studio 2+">
+                    <div class="card-body d-flex flex-column">
+                        <span class="badge bg-dark mb-2 align-self-start">Desktop</span>
+                        <h5 class="card-title fw-bold">Surface Studio 2+</h5>
+                        <p class="card-text text-muted flex-grow-1">Elegant desktop workstation featuring a massive 28-inch touchscreen.</p>
+                        <p class="fw-bold fs-5 text-dark mb-3">From $4,299.99</p>
+                        <a href="#" class="btn btn-primary w-100 rounded-1">Shop Studio 2+</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 5. PROMO BANNER (Surface for Business) -->
+    <section class="container my-5">
+        <div class="card bg-dark text-white border-0 rounded-3 overflow-hidden shadow">
+            <div class="row g-0 align-items-center">
+                <div class="col-md-6 p-4 p-md-5">
+                    <span class="text-uppercase tracking-wider small text-info fw-bold">For Enterprise</span>
+                    <h2 class="card-title fw-bold display-6 my-2">Surface for Business</h2>
+                    <p class="card-text text-light opacity-75 mb-4">
+                        Empower your organization with versatile devices built for hybrid work, enterprise-grade security, and seamless deployment.
+                    </p>
+                    <a href="#" class="btn btn-light fw-bold px-4 rounded-1">Explore Business Solutions</a>
+                </div>
+                <div class="col-md-6">
+                    <img src="https://picsum.photos/800/500?random=6" class="img-fluid w-100 object-fit-cover" style="max-height: 350px;" alt="Surface Business">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. FOOTER (Chân trang nhiều cột chuẩn Bootstrap) -->
+    <footer class="bg-light pt-5 pb-4 border-top text-muted small">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-6 col-md-2">
+                    <h6 class="fw-bold text-dark">What's new</h6>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="#" class="text-decoration-none text-muted">Surface Pro 9</a></li>
+                        <li><a href="#" class="text-decoration-none text-muted">Surface Laptop 5</a></li>
+                        <li><a href="#" class="text-decoration-none text-muted">Surface Studio 2+</a></li>
+                        <li><a href="#" class="text-decoration-none text-muted">Windows 11 apps</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2">
+                    <h6 class="fw-bold text-dark">Microsoft Store</h6>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="#" class="text-decoration-none text-muted">Account profile</a></li>
+                        <li><a href="#" class="text-decoration-none text-muted">Download Center</a></li>
+                        <li><a href="#" class="text-decoration-none text-muted">Returns & refunds</a></li>
+                        <li><a href="#" class="text-decoration-none text-muted">Order tracking</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2">
+                    <h6 class="fw-bold text-dark">Education</h6>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="#" class="text-decoration-none text-muted">Microsoft in education</a></li>
+                        <li><a href="#" class="text-decoration-none text-muted">Devices for education</a></li>
+                        <li><a href="#" class="text-decoration-none text-muted">Deals for students</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2">
+                    <h6 class="fw-bold text-dark">Business</h6>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="#" class="text-decoration-none text-muted">Microsoft Cloud</a></li>
+                        <li><a href="#" class="text-decoration-none text-muted">Microsoft Security</a></li>
+                        <li><a href="#" class="text-decoration-none text-muted">Dynamics 365</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2">
+                    <h6 class="fw-bold text-dark">Developer</h6>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="#" class="text-decoration-none text-muted">Microsoft Developer</a></li>
+                        <li><a href="#" class="text-decoration-none text-muted">Documentation</a></li>
+                        <li><a href="#" class="text-decoration-none text-muted">Visual Studio</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2">
+                    <h6 class="fw-bold text-dark">Company</h6>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="#" class="text-decoration-none text-muted">Careers</a></li>
+                        <li><a href="#" class="text-decoration-none text-muted">About Microsoft</a></li>
+                        <li><a href="#" class="text-decoration-none text-muted">Company news</a></li>
+                        <li><a href="#" class="text-decoration-none text-muted">Privacy at Microsoft</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="my-4">
+
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
+                <div>
+                    <a href="#" class="text-muted text-decoration-none me-3"><i class="bi bi-globe me-1"></i> English (United States)</a>
+                </div>
+                <div>
+                    <span class="me-3">&copy; Microsoft 2026</span>
+                    <a href="#" class="text-muted text-decoration-none me-2">Privacy</a>
+                    <a href="#" class="text-muted text-decoration-none me-2">Terms of use</a>
+                    <a href="#" class="text-muted text-decoration-none">Trademarks</a>
+                </div>
+            </div>
+        </div>
     </footer>
 
+    <!-- Bootstrap 5 JS Bundle CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
