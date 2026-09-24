@@ -1,4 +1,3 @@
-/* Reset CSS chuẩn */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -12,9 +11,9 @@ body {
     line-height: 1.5;
 }
 
-/* ================= 1. HEADER (Fixed Sticky) ================= */
+/* 1. Header cố định ở đầu trang khi cuộn */
 .header {
-    position: sticky; /* Mức trung bình: Cố định khi cuộn trang */
+    position: sticky;
     top: 0;
     z-index: 1000;
     background-color: #ffffff;
@@ -44,7 +43,7 @@ body {
     margin-left: 2px;
 }
 
-/* ================= 2. HEAD-LINK ================= */
+/* 2. Định dạng thanh liên kết head-link */
 .head-link {
     text-align: center;
     background-color: #ffffff;
@@ -54,7 +53,6 @@ body {
     color: #888888;
 }
 
-/* Mức trung bình: Bỏ gạch chân và hiệu ứng hover bôi đậm, đổi màu */
 .head-link a {
     color: #333333;
     text-decoration: none;
@@ -67,7 +65,7 @@ body {
     color: #d9534f;
 }
 
-/* ================= 3. MAIN CONTAINER ================= */
+/* 3. Bố cục 2 cột main-container */
 .main-container {
     display: flex;
     max-width: 1100px;
@@ -76,9 +74,9 @@ body {
     gap: 20px;
 }
 
-/* Cột Trái (Left Content - Menu danh sách video) */
+/* Left Content - Danh sách Video bên trái */
 .left-content {
-    flex: 1; /* Tỷ lệ 1 phần (~30-35%) */
+    flex: 1;
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -90,12 +88,6 @@ body {
     border-radius: 4px;
     overflow: hidden;
     cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.video-item:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .video-item img {
@@ -124,19 +116,18 @@ body {
     color: #337ab7;
 }
 
-/* Cột Phải (Right Content - Khung xem video) */
+/* Right Content - Khung xem Video bên phải */
 .right-content {
-    flex: 2; /* Tỷ lệ 2 phần (~65-70%) */
+    flex: 2;
     background-color: #ffffff;
     border: 1px solid #e0e0e0;
     border-radius: 4px;
     padding: 15px;
 }
 
-/* Responsive Video Container (Giữ tỷ lệ 16:9) */
 .video-player {
     position: relative;
-    padding-bottom: 56.25%; /* Tỷ lệ khung hình 16:9 */
+    padding-bottom: 56.25%; /* Tỷ lệ 16:9 */
     height: 0;
     overflow: hidden;
     background-color: #000000;
@@ -176,7 +167,7 @@ body {
     text-align: justify;
 }
 
-/* ================= 4. FOOTER ================= */
+/* 4. Footer */
 .footer {
     text-align: center;
     padding: 20px 0;
@@ -187,11 +178,10 @@ body {
     margin-top: 30px;
 }
 
-/* ================= 5. MỨC NÂNG CAO: RESPONSIVE DESIGN (RWD) ================= */
+/* 5. Responsive cho thiết bị màn hình nhỏ */
 @media screen and (max-width: 768px) {
-    /* Chuyển bố cục 2 cột sang 1 cột xếp chồng trên thiết bị di động/tablet */
     .main-container {
-        flex-direction: column-reverse; /* Đưa Video chính lên trước, danh sách xuống dưới */
+        flex-direction: column-reverse;
     }
 
     .header {
@@ -202,10 +192,5 @@ body {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 5px;
-    }
-
-    .head-link a {
-        margin: 2px 4px;
     }
 }
