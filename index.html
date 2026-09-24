@@ -1,105 +1,113 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phim Hoạt Hình Trực Tuyến</title>
-    <!-- Khai báo liên kết file styles.css chính xác -->
+    <title>MetricsHub Dashboard - Refactored</title>
+
+    <!-- Bootstrap 5 CDN (Dùng cho Pricing & Card Utilities) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- File CSS tùy chỉnh -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- 1. Header (Logo cố định ở đầu trang) -->
-    <header class="header">
-        <div class="logo">
-            <span class="logo-red">Phim</span><span class="logo-orange">HoạtHình</span>
+    <!-- 1. NAVBAR: Áp dụng Flexbox (Content-first, co giãn động theo chữ dài) -->
+    <nav class="custom-navbar">
+        <div class="nav-logo">
+            <strong>MetricsHub</strong>
         </div>
-    </header>
-
-    <!-- 2. Head-link (Menu liên kết trang) -->
-    <nav class="head-link">
-        <a href="#" class="active">Phim hoạt hình</a> | 
-        <a href="#">Phim hoạt hình yêu thích</a> | 
-        <a href="#">Nhân vật hoạt hình</a> | 
-        <a href="#">Góp ý</a>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">VeryLongGermanWordForDashboard</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="nav-profile">
+            <button class="btn btn-outline-light btn-sm">Profile</button>
+        </div>
     </nav>
 
-    <!-- 3. Main Content (Nội dung chính 2 cột) -->
-    <div class="main-container">
-
-        <!-- Left Content: Menu danh sách video có sẵn -->
-        <aside class="left-content">
+    <!-- 2. BENTO DASHBOARD: Áp dụng CSS Grid 2D (Làm phẳng DOM, dùng span) -->
+    <section class="dashboard-container my-4">
+        <h2 class="mb-3 px-3">Bento Dashboard Metrics</h2>
+        
+        <div class="bento-grid">
+            <!-- Chart A: Chiếm 2 cột x 2 hàng -->
+            <div class="widget widget-large-2x2">
+                <h3>Chart A (Span 2x2)</h3>
+                <p>Biểu đồ phân tích doanh thu tổng hợp (Chiếm 2 cột, 2 hàng trên Desktop).</p>
+            </div>
             
-            <div class="video-item active">
-                <img src="https://picsum.photos/300/180?random=1" alt="Khách sạn Nobi">
-                <div class="video-info">
-                    <h4>Welcom đến với khách sạn Nobi</h4>
-                    <p class="views">5,147,528 lượt xem</p>
-                    <p class="channel">Channel Fun</p>
+            <!-- Các Widget đơn nhỏ (Siblings ngang hàng) -->
+            <div class="widget">
+                <h4>Chart B</h4>
+                <p>Lượng truy cập theo giờ</p>
+            </div>
+
+            <div class="widget">
+                <h4>Chart C</h4>
+                <p>Tỷ lệ chuyển đổi</p>
+            </div>
+
+            <div class="widget">
+                <h4>Chart D</h4>
+                <p>Số lượng người dùng mới</p>
+            </div>
+
+            <div class="widget">
+                <h4>Chart E</h4>
+                <p>Thời gian trung bình/phiên</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. PRICING SECTION: Áp dụng Bootstrap 5 Grid (Tốc độ triển khai nhanh, chuẩn RWD) -->
+    <section class="container my-5">
+        <h2 class="text-center mb-4">Bảng Giá Dịch Vụ</h2>
+        
+        <div class="row g-4">
+            <!-- Gói Cơ bản -->
+            <div class="col-12 col-md-4">
+                <div class="card h-100 shadow-sm text-center">
+                    <div class="card-body">
+                        <h3 class="card-title">Gói Cơ bản</h3>
+                        <p class="display-6 fw-bold my-3">$9<small class="fs-6 text-muted">/tháng</small></p>
+                        <p class="card-text">Dành cho cá nhân khởi nghiệp và dự án nhỏ.</p>
+                        <button class="btn btn-outline-primary w-100 mt-3">Đăng ký ngay</button>
+                    </div>
                 </div>
             </div>
 
-            <div class="video-item">
-                <img src="https://picsum.photos/300/180?random=2" alt="Suneo khổng lồ">
-                <div class="video-info">
-                    <h4>Suneo khổng lồ</h4>
-                    <p class="views">5,147,528 lượt xem</p>
-                    <p class="channel">Doreamon Vietsub</p>
+            <!-- Gói Nâng cao -->
+            <div class="col-12 col-md-4">
+                <div class="card h-100 shadow-sm border-primary text-center">
+                    <div class="card-body">
+                        <span class="badge bg-primary mb-2">Phổ biến</span>
+                        <h3 class="card-title">Gói Nâng cao</h3>
+                        <p class="display-6 fw-bold my-3">$29<small class="fs-6 text-muted">/tháng</small></p>
+                        <p class="card-text">Đầy đủ tính năng phân tích cho nhóm phát triển.</p>
+                        <button class="btn btn-primary w-100 mt-3">Đăng ký ngay</button>
+                    </div>
                 </div>
             </div>
 
-            <div class="video-item">
-                <img src="https://picsum.photos/300/180?random=3" alt="Còi điều khiển vật">
-                <div class="video-info">
-                    <h4>Còi điều khiển vật</h4>
-                    <p class="views">5,147,528 lượt xem</p>
-                    <p class="channel">Doreamon Vietsub</p>
+            <!-- Gói Doanh nghiệp -->
+            <div class="col-12 col-md-4">
+                <div class="card h-100 shadow-sm text-center">
+                    <div class="card-body">
+                        <h3 class="card-title">Gói Doanh nghiệp</h3>
+                        <p class="display-6 fw-bold my-3">$99<small class="fs-6 text-muted">/tháng</small></p>
+                        <p class="card-text">Hỗ trợ riêng 24/7 và tùy chỉnh không giới hạn.</p>
+                        <button class="btn btn-outline-primary w-100 mt-3">Liên hệ kinh doanh</button>
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="video-item">
-                <img src="https://picsum.photos/300/180?random=4" alt="Chiếc máy tạo kẹo bông">
-                <div class="video-info">
-                    <h4>Chiếc máy tạo kẹo bông</h4>
-                    <p class="views">5,147,528 lượt xem</p>
-                    <p class="channel">Doreamon Vietsub</p>
-                </div>
-            </div>
-
-        </aside>
-
-        <!-- Right Content: Video player & Chi tiết nội dung -->
-        <main class="right-content">
-            
-            <!-- Trình phát video YouTube sử dụng iframe -->
-            <div class="video-player">
-                <iframe 
-                    src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ" 
-                    title="Doraemon Video Player" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
-                </iframe>
-            </div>
-
-            <div class="video-detail">
-                <h2>Tớ là Mari - <span class="views">5,147,528 lượt xem</span></h2>
-                <p class="author"><strong>Tác giả:</strong> NXB Kim Đồng</p>
-                
-                <div class="description">
-                    <p>Bộ phim kể về câu chuyện Thạch Sanh chém Trăn Tinh cứu dân, bắn Đại Bàng cứu công chúa, dùng tiếng đàn nhân nghĩa dẹp tan quân xâm lược. Nhưng cuộc đời Thạch Sanh luôn bị tên Lý Thông làm cho điêu đứng. Cuối cùng chính nghĩa đã thắng. Tên Lý Thông gian ác bị đền tội. Mời các bạn cùng đón xem và cảm nhận.</p>
-                    
-                    <p>Bộ phim kể về câu chuyện Thạch Sanh chém Trăn Tinh cứu dân, bắn Đại Bàng cứu công chúa, dùng tiếng đàn nhân nghĩa dẹp tan quân xâm lược. Nhưng cuộc đời Thạch Sanh luôn bị tên Lý Thông làm cho điêu đứng. Cuối cùng chính nghĩa đã thắng. Tên Lý Thông gian ác bị đền tội. Mời các bạn cùng đón xem và cảm nhận.</p>
-                </div>
-            </div>
-
-        </main>
-
-    </div>
-
-    <!-- 4. Footer (Bản quyền) -->
-    <footer class="footer">
-        <p>© 2017 - Thiết kế web bởi trang hoathinhvn.net</p>
+    <footer class="text-center py-4 bg-light border-top">
+        <small class="text-muted">&copy; 2026 MetricsHub Inc. All rights reserved.</small>
     </footer>
 
 </body>
