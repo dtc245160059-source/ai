@@ -1,0 +1,65 @@
+/* 1. Đặt phông chữ mặc định cho toàn trang */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* 2. Định dạng thanh chứa menu chính */
+#menu {
+    height: 30px;
+    padding: 0;
+    margin: 0;
+    background-color: #000000;
+    border: 1px solid #CDCDCD;
+}
+
+/* 3. Xóa lề và đệm mặc định của các danh sách */
+#menu ul, #menu li {
+    padding: 0;
+    margin: 0;
+}
+
+/* 4. Đặt các mục menu xếp hàng ngang bằng float: left */
+#menu li {
+    position: relative;
+    float: left;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* 5. Định dạng kích thước và hiển thị cho thẻ liên kết <a> */
+#menu li a {
+    width: 100px;
+    height: 30px;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    line-height: 30px;
+    background-color: black;
+    color: white;
+}
+
+/* 6. Định dạng riêng cho thẻ <a> trong menu con (rộng hơn và căn trái) */
+#menu ul ul li a {
+    width: 200px;
+    text-align: left;
+    padding-left: 10px;
+}
+
+/* 7. Hiệu ứng đổi màu nền sang đỏ khi rê chuột vào */
+#menu li a:hover {
+    background-color: red;
+}
+
+/* 8. Xử lý vị trí menu con (xổ xuống dưới thanh menu cha) và ẩn đi */
+#menu ul ul {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    visibility: hidden;
+}
+
+/* 9. Hiển thị menu con khi rê chuột vào mục menu cha */
+#menu ul li:hover ul {
+    visibility: visible;
+}
