@@ -1,93 +1,32 @@
-/* Reset căn bản */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+/* Chỉ bổ sung một số tinh chỉnh nhẹ mà Bootstrap Utility chưa có sẵn */
 
 body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background-color: #f8f9fa;
-    color: #212529;
+    font-family: "Segoe UI", SegoeUI, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #242424;
 }
 
-/* ==========================================================================
-   1. NAVBAR: FLEXBOX (Dàn trang 1D linh hoạt, tự giãn theo nội dung)
-   ========================================================================== */
-.custom-navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap; /* Cho phép rớt dòng đẹp mắt trên Mobile */
-    gap: 15px;
-    background-color: #212529;
-    color: #ffffff;
-    padding: 15px 30px;
+/* Đảm bảo hình ảnh thẻ Card hiển thị đồng đều */
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
 }
 
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
+/* Hiệu ứng Hover nhẹ cho sản phẩm */
+.card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.nav-links a {
-    color: #cccccc;
-    text-decoration: none;
-    transition: color 0.2s ease;
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
 }
 
-.nav-links a:hover {
-    color: #ffffff;
+/* Tùy chỉnh danh sách link ở Footer */
+footer ul li {
+    margin-bottom: 0.5rem;
 }
 
-/* ==========================================================================
-   2. BENTO DASHBOARD: CSS GRID (Dàn trang 2D, làm phẳng cấu trúc DOM)
-   ========================================================================== */
-.dashboard-container {
-    padding: 0 15px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.bento-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 cột bằng nhau trên Desktop */
-    grid-auto-rows: minmax(140px, auto);
-    gap: 15px; /* Sử dụng gap thay vì margin thủ công */
-}
-
-.widget {
-    background-color: #ffffff;
-    border: 1px solid #e9ecef;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-}
-
-/* Biểu đồ lớn chiếm 2 cột x 2 hàng */
-.widget-large-2x2 {
-    grid-column: span 2;
-    grid-row: span 2;
-    background-color: #eef2ff;
-    border-color: #c7d2fe;
-}
-
-/* Responsive cho Bento Grid */
-@media (max-width: 992px) {
-    .bento-grid {
-        grid-template-columns: repeat(2, 1fr); /* Tablet: Chuyển về 2 cột */
-    }
-}
-
-@media (max-width: 576px) {
-    .bento-grid {
-        grid-template-columns: 1fr; /* Mobile: 1 cột xếp chồng */
-    }
-    
-    .widget-large-2x2 {
-        grid-column: span 1;
-        grid-row: span 1; /* Reset về 1 ô trên di động */
-    }
+footer ul li a:hover {
+    text-decoration: underline !important;
+    color: #0067b8 !important;
 }
