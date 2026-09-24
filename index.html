@@ -3,141 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giao diện Facebook giản lược</title>
-    <!-- Nhúng đúng file styles.css -->
+    <title>Phim Hoạt Hình Trực Tuyến</title>
+    <!-- Liên kết chính xác tới file styles.css -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- 1. FIXED HEADER (Thanh đầu trang cố định) -->
+    <!-- 1. HEADER (Cố định ở đầu trang khi cuộn) -->
     <header class="header">
-        <div class="header-left">
-            <div class="logo">facebook</div>
-            <input type="text" class="search-bar" placeholder="Tìm kiếm trên Facebook">
-        </div>
-
-        <nav class="header-center">
-            <a href="#" class="nav-item active">Trang chủ</a>
-            <a href="#" class="nav-item">Thước phim</a>
-            <a href="#" class="nav-item">Watch</a>
-            <a href="#" class="nav-item">Nhóm</a>
-        </nav>
-
-        <div class="header-right">
-            <div class="user-avatar">User</div>
+        <div class="logo">
+            <span class="logo-red">Phim</span><span class="logo-orange">HoạtHình</span>
         </div>
     </header>
 
-    <!-- 2. MAIN LAYOUT (Khung chứa toàn bộ nội dung dưới Header) -->
-    <div class="main-layout">
+    <!-- 2. HEAD-LINK (Thanh điều hướng trang) -->
+    <nav class="head-link">
+        <a href="#" class="active">Phim hoạt hình</a> | 
+        <a href="#">Phim hoạt hình yêu thích</a> | 
+        <a href="#">Nhân vật hoạt hình</a> | 
+        <a href="#">Góp ý</a>
+    </nav>
 
-        <!-- Sidebar Trái -->
-        <aside class="sidebar left-sidebar">
-            <div class="sidebar-item active">
-                <span class="icon">👤</span> Trang cá nhân
+    <!-- 3. MAIN CONTENT (Bố cục 2 cột chính) -->
+    <div class="main-container">
+
+        <!-- LEFT CONTENT: Danh sách video gợi ý -->
+        <aside class="left-content">
+            
+            <div class="video-item active">
+                <img src="https://picsum.photos/300/180?random=1" alt="Khách sạn Nobi">
+                <div class="video-info">
+                    <h4>Welcom đến với khách sạn Nobi</h4>
+                    <p class="views">5,147,528 lượt xem</p>
+                    <p class="channel">Channel Fun</p>
+                </div>
             </div>
-            <div class="sidebar-item">
-                <span class="icon">👥</span> Bạn bè
+
+            <div class="video-item">
+                <img src="https://picsum.photos/300/180?random=2" alt="Suneo khổng lồ">
+                <div class="video-info">
+                    <h4>Suneo khổng lồ</h4>
+                    <p class="views">5,147,528 lượt xem</p>
+                    <p class="channel">Doreamon Vietsub</p>
+                </div>
             </div>
-            <div class="sidebar-item">
-                <span class="icon">👨‍👩‍👧‍👦</span> Nhóm
+
+            <div class="video-item">
+                <img src="https://picsum.photos/300/180?random=3" alt="Còi điều khiển vật">
+                <div class="video-info">
+                    <h4>Còi điều khiển vật</h4>
+                    <p class="views">5,147,528 lượt xem</p>
+                    <p class="channel">Doreamon Vietsub</p>
+                </div>
             </div>
-            <div class="sidebar-item">
-                <span class="icon">🏪</span> Marketplace
+
+            <div class="video-item">
+                <img src="https://picsum.photos/300/180?random=4" alt="Chiếc máy tạo kẹo bông">
+                <div class="video-info">
+                    <h4>Chiếc máy tạo kẹo bông</h4>
+                    <p class="views">5,147,528 lượt xem</p>
+                    <p class="channel">Doreamon Vietsub</p>
+                </div>
             </div>
-            <div class="sidebar-item">
-                <span class="icon">📺</span> Watch
-            </div>
-            <div class="sidebar-item">
-                <span class="icon">🔖</span> Đã lưu
-            </div>
+
         </aside>
 
-        <!-- Main Content (Bảng tin / Feed ở giữa) -->
-        <main class="feed">
+        <!-- RIGHT CONTENT: Trình phát video & Thông tin nội dung -->
+        <main class="right-content">
             
-            <!-- Khung tạo bài viết -->
-            <div class="card create-post">
-                <div class="create-post-top">
-                    <div class="avatar"></div>
-                    <input type="text" placeholder="Bạn đang nghĩ gì thế?">
-                </div>
-                <hr>
-                <div class="create-post-actions">
-                    <span>🎥 Video trực tiếp</span>
-                    <span>🖼️ Ảnh/video</span>
-                    <span>😊 Cảm xúc/hành động</span>
-                </div>
+            <!-- Khung phát Video (Có thể thay iframe bằng thẻ <video> nếu cần) -->
+            <div class="video-player">
+                <iframe 
+                    src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ" 
+                    title="Doraemon Video Player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
             </div>
 
-            <!-- Bài viết 1 -->
-            <article class="card post">
-                <div class="post-header">
-                    <div class="avatar"></div>
-                    <div class="post-info">
-                        <h4>CodeGym Việt Nam</h4>
-                        <span>3 giờ trước · 🌐</span>
-                    </div>
+            <div class="video-detail">
+                <h2>Tớ là Mari - <span class="views">5,147,528 lượt xem</span></h2>
+                <p class="author"><strong>Tác giả:</strong> NXB Kim Đồng</p>
+                
+                <div class="description">
+                    <p>Bộ phim kể về câu chuyện Thạch Sanh chém Trăn Tinh cứu dân, bắn Đại Bàng cứu công chúa, dùng tiếng đàn nhân nghĩa dẹp tan quân xâm lược. Nhưng cuộc đời Thạch Sanh luôn bị tên Lý Thông làm cho điêu đứng. Cuối cùng chính nghĩa đã thắng. Tên Lý Thông gian ác bị đền tội. Mời các bạn cùng đón xem và cảm nhận.</p>
+                    
+                    <p>Bộ phim kể về câu chuyện Thạch Sanh chém Trăn Tinh cứu dân, bắn Đại Bàng cứu công chúa, dùng tiếng đàn nhân nghĩa dẹp tan quân xâm lược. Nhưng cuộc đời Thạch Sanh luôn bị tên Lý Thông làm cho điêu đứng. Cuối cùng chính nghĩa đã thắng. Tên Lý Thông gian ác bị đền tội. Mời các bạn cùng đón xem và cảm nhận.</p>
+                    
+                    <p>Bộ phim kể về câu chuyện Thạch Sanh chém Trăn Tinh cứu dân, bắn Đại Bàng cứu công chúa, dùng tiếng đàn nhân nghĩa dẹp tan quân xâm lược. Nhưng cuộc đời Thạch Sanh luôn bị tên Lý Thông làm cho điêu đứng. Cuối cùng chính nghĩa đã thắng. Tên Lý Thông gian ác bị đền tội. Mời các bạn cùng đón xem và cảm nhận.</p>
                 </div>
-                <div class="post-content">
-                    <p>Chào mừng các bạn sinh viên đến với bài thực hành dựng giao diện trang chủ Facebook giản lược bằng HTML5 & CSS!</p>
-                </div>
-                <div class="post-stats">
-                    <span>👍 120 Thích</span>
-                    <span>15 Bình luận · 5 Chia sẻ</span>
-                </div>
-                <hr>
-                <div class="post-actions">
-                    <button>👍 Thích</button>
-                    <button>💬 Bình luận</button>
-                    <button>↗️ Chia sẻ</button>
-                </div>
-            </article>
-
-            <!-- Bài viết 2 -->
-            <article class="card post">
-                <div class="post-header">
-                    <div class="avatar"></div>
-                    <div class="post-info">
-                        <h4>Lập trình viên Web</h4>
-                        <span>5 giờ trước · 🌐</span>
-                    </div>
-                </div>
-                <div class="post-content">
-                    <p>Kỹ năng định vị Fixed Header và phân chia Sidebar rất quan trọng khi thiết kế bố cục Web ứng dụng thực tế.</p>
-                </div>
-                <div class="post-stats">
-                    <span>❤️ 85 Thích</span>
-                    <span>8 Bình luận</span>
-                </div>
-                <hr>
-                <div class="post-actions">
-                    <button>👍 Thích</button>
-                    <button>💬 Bình luận</button>
-                    <button>↗️ Chia sẻ</button>
-                </div>
-            </article>
+            </div>
 
         </main>
 
-        <!-- Sidebar Phải (Danh sách người liên hệ) -->
-        <aside class="sidebar right-sidebar">
-            <h3>Người liên hệ</h3>
-            <div class="contact-item">
-                <div class="avatar online"></div>
-                <span>Nguyễn Văn A</span>
-            </div>
-            <div class="contact-item">
-                <div class="avatar online"></div>
-                <span>Trần Thị B</span>
-            </div>
-            <div class="contact-item">
-                <div class="avatar"></div>
-                <span>Lê Văn C</span>
-            </div>
-        </aside>
-
     </div>
+
+    <!-- 4. FOOTER (Thông tin bản quyền) -->
+    <footer class="footer">
+        <p>© 2017 - Thiết kế web bởi trang hoathinhvn.net</p>
+    </footer>
 
 </body>
 </html>
