@@ -1,36 +1,142 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Tạo menu ngang</title>
-    <!-- Khai báo chính xác tên file styles.css có chữ s -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giao diện Facebook giản lược</title>
+    <!-- Nhúng đúng file styles.css -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <div id="menu">
-        <ul>
-            <li><a href="#">Sem 1</a>
-                <ul>
-                    <li><a href="#">Computing Fundametal</a></li>
-                    <li><a href="#">C Programming</a></li>
-                    <li><a href="#">Building Dynamic Website</a></li>
-                    <li><a href="#">MS Transact-SQL</a></li>
-                    <li><a href="#">Project</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Sem 2 </a>
-                <ul>
-                    <li><a href="#">Cloud Computing</a></li>
-                    <li><a href="#">APJ - I</a></li>
-                    <li><a href="#">APJ - II</a></li>
-                    <li><a href="#">APJ - III</a></li>
-                    <li><a href="#">eProject</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Sem 3</a></li>
-            <li><a href="#">Sem 4</a></li>
-        </ul>
+    <!-- 1. FIXED HEADER (Thanh đầu trang cố định) -->
+    <header class="header">
+        <div class="header-left">
+            <div class="logo">facebook</div>
+            <input type="text" class="search-bar" placeholder="Tìm kiếm trên Facebook">
+        </div>
+
+        <nav class="header-center">
+            <a href="#" class="nav-item active">Trang chủ</a>
+            <a href="#" class="nav-item">Thước phim</a>
+            <a href="#" class="nav-item">Watch</a>
+            <a href="#" class="nav-item">Nhóm</a>
+        </nav>
+
+        <div class="header-right">
+            <div class="user-avatar">User</div>
+        </div>
+    </header>
+
+    <!-- 2. MAIN LAYOUT (Khung chứa toàn bộ nội dung dưới Header) -->
+    <div class="main-layout">
+
+        <!-- Sidebar Trái -->
+        <aside class="sidebar left-sidebar">
+            <div class="sidebar-item active">
+                <span class="icon">👤</span> Trang cá nhân
+            </div>
+            <div class="sidebar-item">
+                <span class="icon">👥</span> Bạn bè
+            </div>
+            <div class="sidebar-item">
+                <span class="icon">👨‍👩‍👧‍👦</span> Nhóm
+            </div>
+            <div class="sidebar-item">
+                <span class="icon">🏪</span> Marketplace
+            </div>
+            <div class="sidebar-item">
+                <span class="icon">📺</span> Watch
+            </div>
+            <div class="sidebar-item">
+                <span class="icon">🔖</span> Đã lưu
+            </div>
+        </aside>
+
+        <!-- Main Content (Bảng tin / Feed ở giữa) -->
+        <main class="feed">
+            
+            <!-- Khung tạo bài viết -->
+            <div class="card create-post">
+                <div class="create-post-top">
+                    <div class="avatar"></div>
+                    <input type="text" placeholder="Bạn đang nghĩ gì thế?">
+                </div>
+                <hr>
+                <div class="create-post-actions">
+                    <span>🎥 Video trực tiếp</span>
+                    <span>🖼️ Ảnh/video</span>
+                    <span>😊 Cảm xúc/hành động</span>
+                </div>
+            </div>
+
+            <!-- Bài viết 1 -->
+            <article class="card post">
+                <div class="post-header">
+                    <div class="avatar"></div>
+                    <div class="post-info">
+                        <h4>CodeGym Việt Nam</h4>
+                        <span>3 giờ trước · 🌐</span>
+                    </div>
+                </div>
+                <div class="post-content">
+                    <p>Chào mừng các bạn sinh viên đến với bài thực hành dựng giao diện trang chủ Facebook giản lược bằng HTML5 & CSS!</p>
+                </div>
+                <div class="post-stats">
+                    <span>👍 120 Thích</span>
+                    <span>15 Bình luận · 5 Chia sẻ</span>
+                </div>
+                <hr>
+                <div class="post-actions">
+                    <button>👍 Thích</button>
+                    <button>💬 Bình luận</button>
+                    <button>↗️ Chia sẻ</button>
+                </div>
+            </article>
+
+            <!-- Bài viết 2 -->
+            <article class="card post">
+                <div class="post-header">
+                    <div class="avatar"></div>
+                    <div class="post-info">
+                        <h4>Lập trình viên Web</h4>
+                        <span>5 giờ trước · 🌐</span>
+                    </div>
+                </div>
+                <div class="post-content">
+                    <p>Kỹ năng định vị Fixed Header và phân chia Sidebar rất quan trọng khi thiết kế bố cục Web ứng dụng thực tế.</p>
+                </div>
+                <div class="post-stats">
+                    <span>❤️ 85 Thích</span>
+                    <span>8 Bình luận</span>
+                </div>
+                <hr>
+                <div class="post-actions">
+                    <button>👍 Thích</button>
+                    <button>💬 Bình luận</button>
+                    <button>↗️ Chia sẻ</button>
+                </div>
+            </article>
+
+        </main>
+
+        <!-- Sidebar Phải (Danh sách người liên hệ) -->
+        <aside class="sidebar right-sidebar">
+            <h3>Người liên hệ</h3>
+            <div class="contact-item">
+                <div class="avatar online"></div>
+                <span>Nguyễn Văn A</span>
+            </div>
+            <div class="contact-item">
+                <div class="avatar online"></div>
+                <span>Trần Thị B</span>
+            </div>
+            <div class="contact-item">
+                <div class="avatar"></div>
+                <span>Lê Văn C</span>
+            </div>
+        </aside>
+
     </div>
 
 </body>
